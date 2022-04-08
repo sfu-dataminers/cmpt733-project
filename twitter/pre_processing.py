@@ -8,48 +8,61 @@ from wordcloud import STOPWORDS
 # nltk.download('omw-1.4')
 from nltk.stem import WordNetLemmatizer
 
-
 def preprocess(text):
-    text = str(text)
+    
     stopwords = set(STOPWORDS)
-    stopwords.update(["air","airline","united","us","airways","virgin","america","jetblue",
-                     "usairway","usairways","flight","americanair","southwestair","southwestairlines",
-                     "southwestairway","southwestairways","virginamerica","sunday","monday","tuesday",
-                     "wednesday","thursday","friday","saturday", "miami","los angeles","new york",
-                     "chicago","dallas","savannah"])
-
-    r = re.compile(r'(?<=\@)(\w+)')
-    ra = re.compile(r'(?<=\#)(\w+)')
-    ro = re.compile(r'(flt\d*)')
-
-    names = r.findall(text.lower())
-    hashtag = ra.findall(text.lower())
-    flight = ro.findall(text.lower())
-    lmtzr = WordNetLemmatizer()
-
+    
+    # Filter for mentions
+    mentions_filter = re.compile(r'(?<=\@)(\w+)')
+    
+    # Filter for hash-tags
+    hashtags_filter = re.compile(r'(?<=\#)(\w+)')
+    
+    # Filter for flights numbers
+    flight_numbers = re.compile(r'(flt\d*)')
+    
+    # Finding all mentions
+    all_mentions = mentions_filter.findall(text.lower())
+    
+    # Finding all hash-tags
+    all_hashtag = hashtags_filter.findall(text.lower())
+    
+    # Finding all hash-tags
+    all_flights = flight_numbers.findall(text.lower())
+    
+    word_lemmatize = WordNetLemmatizer()
+    
+    # Stemming 
     def stem_tokens(tokens, lemmatize):
         lemmatized = []
         for item in tokens:
-            lemmatized.append(lemmatize.lemmatize(item, 'v'))
+            lemmatized.append(word_lemmatize.lemmatize(item,'v'))
         return lemmatized
-
+    
+    # De-emojify tweets to text
     def deEmojify(inputString):
         return inputString.encode('ascii', 'ignore').decode('ascii')
-
+    
     text = deEmojify(text)
-    soup = BeautifulSoup(text, features="lxml")
+    soup = BeautifulSoup(text)
     text = soup.get_text()
-    text = ''.join([ch.lower() for ch in text if ch not in string.punctuation])
-    tokens = nltk.word_tokenize(text)
-    tokens = [ch for ch in tokens if len(ch) >= 3]
-    tokens = [ch for ch in tokens if len(ch) <= 15]
-    lemm = stem_tokens(tokens, lmtzr)
-    lemstop = [i for i in lemm if i not in stopwords]
-    lemstopcl = [i for i in lemstop if i not in names]
-    lemstopcl = [i for i in lemstopcl if i not in hashtag]
-    lemstopcl = [i for i in lemstopcl if i not in flight]
-    lemstopcl = [i for i in lemstopcl if not i.isdigit()]
-    return lemstopcl
+    
+    # Removing punctuation
+    punc_text = [x.lower() for x in text if x not in string.punctuation]
+    text = "".join(punc_text)
+    
+    # Tokenize words
+    word_tokens = nltk.word_tokenize(text)
+    
+    # Keeping the words with length between 4 and 15
+    filtered_tokens = [x for x in word_tokens if len(x)>2 and len(x)<15]
+    
+    # Filter tokens
+    tokens = stem_tokens(filtered_tokens, word_lemmatize)
+    all_tokens = [i for i in tokens if (i not in stopwords) and (i not in all_mentions) 
+                  and (i not in all_hashtag) and (i not in all_flights) and (not i.isdigit())]
+    
+    return all_tokens
 
 
 # if __name__ == '__main__':
