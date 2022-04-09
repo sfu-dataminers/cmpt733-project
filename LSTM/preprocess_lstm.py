@@ -45,9 +45,11 @@ def preprocess(text):
     
     # Finding all hash-tags
     all_flights = flight_numbers.findall(text.lower())
-    
+
+    word_lemmatize = WordNetLemmatizer()
+
     # Stemming 
-    def stem_tokens(tokens, lemmatize):
+    def lemm_tokens(tokens, word_lemmatize):
         lemmatized = []
         for item in tokens:
             lemmatized.append(word_lemmatize.lemmatize(item,'v'))
@@ -72,7 +74,7 @@ def preprocess(text):
     filtered_tokens = [x for x in word_tokens if len(x)>2 and len(x)<15]
     
     # Filter tokens
-    tokens = stem_tokens(filtered_tokens, word_lemmatize)
+    tokens = lemm_tokens(filtered_tokens, word_lemmatize)
     all_tokens = [i for i in tokens if (i not in stopwords) and (i not in all_mentions) 
                   and (i not in all_hashtag) and (i not in all_flights) and (not i.isdigit())]
     
