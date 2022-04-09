@@ -1,11 +1,11 @@
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
+import config_file as conf 
 from kafka import KafkaProducer
-import config_file as conf
-producer = KafkaProducer(bootstrap_servers='localhost:9092') #Same port as your Kafka server
 
-topic_name = "flight"
+producer = KafkaProducer(bootstrap_servers='localhost:9092')
+topic_name = "dataminers"
 
 
 class twitterAuth():
