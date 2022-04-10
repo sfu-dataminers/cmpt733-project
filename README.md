@@ -48,10 +48,9 @@ spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1 your_di
 - Tweet your response: <br>
 Try raising your issue on twitter with a mention to us i.e. **@DataMinersSfu**
 
-<br>
 #### **2. Testing on CLI**
 - Run twitter_cli.py
-````
+```
 python3 twitter_cli.py
 ```
 - Browse through the example tweets using Menu option - 1
