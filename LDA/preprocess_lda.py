@@ -15,7 +15,7 @@ from gensim.utils import simple_preprocess
 from gensim.parsing.preprocessing import STOPWORDS
 from bs4 import BeautifulSoup
 
-stopwords_lda = pd.read_csv("./LDA_details/stopwords_lda.csv")
+stopwords_lda = pd.read_csv("./LDA/LDA_details/stopwords_lda.csv")
 
 def preprocess(text):
         stopwords = set(STOPWORDS)
@@ -25,7 +25,7 @@ def preprocess(text):
         
          # Replacing similar words
         def replace_similar(text):
-            with open('./LDA_details/sample.json', 'r') as openfile:
+            with open('./LDA/LDA_details/sample.json', 'r') as openfile:
                 json_object = json.load(openfile)
             for key, value in json_object.items():
                 text = text.replace(key, value)
