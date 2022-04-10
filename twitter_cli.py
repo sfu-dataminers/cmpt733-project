@@ -11,18 +11,15 @@ import numpy as np
 from twitter.responses import fetch_response
 from LSTM.lstm_test import predict_sentiment
 from LDA.lda_test import get_topic
-from twitter.nrc_lexicon import fetch_nrc
-from twitter.nrc_lexicon import preprocess
+from twitter.nrc_lexicon import fetch_nrc, preprocess
 
 def check_response(tweet):
     
     tweet_sentiment = predict_sentiment(tweet)
     preprocess_tweet = preprocess(tweet)
-    print(preprocess_tweet, "*************************************")
     tweet_emotion = fetch_nrc(preprocess_tweet)
     tweet_topic = get_topic(tweet)
     
-    print(tweet_sentiment, tweet_topic, tweet_emotion)
     tweet_response = fetch_response(tweet, tweet_sentiment, tweet_topic, tweet_emotion)
     return tweet_response
 
