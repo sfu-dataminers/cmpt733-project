@@ -1,0 +1,41 @@
+Sentiment,NRC_sentiment,LDA_topic,Response
+Positive,,,"Thank you for your support, we are glad you enjoyed your journey, we wish to serve you even better the next time you fly with us."
+Positive,trust,,Thank you for trusting our airlines. We wish to serve you even better in your next journey with us.
+Positive,joy,,Glad to know you enjoyed our service! Hope you fly with us again in future.
+Positive,anticipation,,"Your anticipation is commendable. Hope you enjoyed our service, looking forward to fly with you again in future."
+Neutral,,,Thank you for your response. Our officials will contact you shortly.
+Negative,,Customer Service,"Sorry to hear this delay issue, our staff will take a look into your matter as soon as possible."
+Negative,,Reservation Issue,Sorry for the reservation issues you are facing. Our team will look into your matter and would respond as soon as possible. Thank you.
+Negative,,Baggage Issue,Terribly sorry for the inconvenience you are facing. Our team will look into your baggage and contact you as soon as possible. Thank you.
+Negative,,Customer Service,We apologize for the troubles you went through. Our customer support team will shortly contact you. Thank you for the patience
+Negative,,Reschedule Issue,Sorry to hear about this resceduling issue you are facing. Our staff will look into your matter as soon as they can
+Negative,,Phone or Online Booking,We apologize for the troubles you went through for booking. Our customer support team will shortly contact you. Thank you for the patience
+Negative,,Refund Issue,Sorry to hear about the issues you are having. We will shortly initiate the refund process for you.
+Negative,fear,Delay Issue,"Please do not panic, we are sorry to hear about this delay issue you are having, our staff will take a look into your matter as soon as possible."
+Negative,fear,Reservation Issue,"Please do not panic, we are sorry to hear about this reservation issues you are having, our staff will take a look into your matter as soon as possible."
+Negative,fear,Baggage Issue,"Please do not panic, we are terribly sorry for the inconvenience you are facing. Our team will look into your baggage and contact you as soon as possible. Thank you."
+Negative,fear,Customer Service,"Please do not panic, we apologize for the troubles you went through. Our customer support team will shortly contact you. Thank you for the patience"
+Negative,fear,Reschedule Issue,"Please do not panic, we are sorry to hear about this resceduling issue you are facing. Our staff will look into your matter as soon as they can"
+Negative,fear,Phone or Online Booking,"Please do not panic, we apologize for the troubles you went through for booking. Our customer support team will shortly contact you. Thank you for the patience"
+Negative,fear,Refund Issue,"Please do not pancic, sorry to hear about the issues you are having. We will shortly initiate the refund process for you."
+Negative,disgust,Delay Issue,"We are so sorry to hear that you are appalled by our service, our staff will take a look into your matter as soon as possible. And, we will ensure that you do not face delay issues with us in future"
+Negative,disgust,Reservation Issue,"We are so sorry to hear that you are appalled by our service, our team will take a look into your reservations as soon as possible and will provide you the solution."
+Negative,disgust,Baggage Issue,"We are so sorry to hear that you are appalled by our service, our team will take a look into your baggage issue as soon as possible. Hope to serve you better the next time you fly with us."
+Negative,disgust,Customer Service,"We are so sorry to hear that you are appalled by our service, our customer support team will look into your matter as soon as possible. Hope to serve you better the next time you fly with us."
+Negative,disgust,Reschedule Issue,"We are so sorry to hear that you are appalled by our service, our team will look into the rescheduling issue you are facing. Hope to serve you better the next time you fly with us."
+Negative,disgust,Phone or Online Booking,"We are so sorry to hear that you are appalled by our service, our team will look into the booking issue you are facing. Hope to serve you better in future."
+Negative,disgust,Refund Issue,"We are so sorry to hear that you are appalled by our service, our team will look into the refund issue you are facing. Hope to serve you better in future."
+Negative,anger,Delay Issue,"Sorry to hear your frustation, our staff will take a look into your matter as soon as possible."
+Negative,anger,Reservation Issue,"Sorry to hear your frustation, our team will take a look into your reservations as soon as possible and will provide you the solution."
+Negative,anger,Baggage Issue,"Sorry to hear your frustation, our team will take a look into your baggage issue as soon as possible. Hope to serve you better the next time you fly with us."
+Negative,anger,Customer Service,"Sorry to hear your frustation, our customer support team will look into your matter as soon as possible. Hope to serve you better the next time you fly with us."
+Negative,anger,Reschedule Issue,"Sorry to hear your frustation, our team will look into the rescheduling issue you are facing. Hope to serve you better the next time you fly with us."
+Negative,anger,Phone or Online Booking,"Sorry to hear your frustation, our team will look into the booking issue you are facing. Hope to serve you better in future."
+Negative,anger,Refund Issue,"Sorry to hear your frustation, our team will look into the refund issue you are facing. Hope to serve you better in future."
+Negative,sadness,Delay Issue,"We deeply regret you faced such misery, our staff will take a look into your matter as soon as possible. And, we will ensure that you do not face delay issues with us in future."
+Negative,sadness,Reservation Issue,"We deeply regret you faced such misery, our team will take a look into your reservations as soon as possible and will provide you the solution."
+Negative,sadness,Baggage Issue,"We deeply regret you faced such misery, our team will take a look into your baggage issue as soon as possible. Hope to serve you better the next time you fly with us."
+Negative,sadness,Customer Service,"We deeply regret you faced such misery, our customer support team will look into your matter as soon as possible. Hope to serve you better the next time you fly with us."
+Negative,sadness,Reschedule Issue,"We deeply regret you faced such misery, our team will look into the rescheduling issue you are facing. Hope to serve you better the next time you fly with us."
+Negative,sadness,Phone or Online Booking,"We deeply regret you faced such misery, our team will look into the booking issue you are facing. Hope to serve you better in future."
+Negative,sadness,Refund Issue,"We deeply regret you faced such misery, our team will look into the refund issue you are facing. Hope to serve you better in future."
