@@ -1,25 +1,14 @@
 import re
 import pandas as pd
-import matplotlib.pyplot as plt
 from bs4 import BeautifulSoup
 import string
-import numpy as np
-import os
-import glob
-from ast import literal_eval
 
 import nltk
-# nltk.download('wordnet')
-# nltk.download('punkt')
-# nltk.download('omw-1.4')
 from nltk.stem import WordNetLemmatizer
 
-import wordcloud
-from wordcloud import WordCloud, STOPWORDS
-from textblob import Word
-from collections import Counter
+from wordcloud import STOPWORDS
 
-stopwords_lstm = pd.read_csv('stopwords_lstm.csv')
+stopwords_lstm = pd.read_csv('./LSTM/LSTM_details/stopwords_lstm.csv')
 
 def preprocess(text):
     
