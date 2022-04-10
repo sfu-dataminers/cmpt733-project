@@ -18,7 +18,7 @@ from twitter.responses import fetch_response
 
 def get_api(row):
     # Fetching tweet response based on Sentiment, Topic and NRC_Sentiment
-    text = fetch_response(row.Sentiment, row.Topic, row.NRC_Sentiment)
+    text = fetch_response(row.text, row.Sentiment, row.Topic, row.NRC_Sentiment)
     
     # Twitter authentication
     auth = tw.OAuthHandler(cf.consumer_key, cf.consumer_secret)

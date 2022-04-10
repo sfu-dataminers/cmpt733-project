@@ -1,11 +1,11 @@
 from gensim import corpora, models
-from preprocess_lda import preprocess
+from LDA.preprocess_lda import preprocess
 
 # Fetch twitter topic from tweets using LDA
 def get_topic(tweet):
     # Load LDA model and corpora created in train
-    lda_model4 = models.LdaModel.load('./LDA_details/lda_model4.model')
-    id2word = corpora.Dictionary.load('LDA_details/id2word.dict')
+    lda_model4 = models.LdaModel.load('./LDA/LDA_details/lda_model4.model')
+    id2word = corpora.Dictionary.load('./LDA/LDA_details/id2word.dict')
 
     # Create doc to bag to word and fetch topics using model
     bow_vector = id2word.doc2bow(preprocess(tweet))

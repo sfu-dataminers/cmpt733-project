@@ -1,11 +1,8 @@
 import re
 import string
 import nltk
-import glob
-import pandas as pd
 from bs4 import BeautifulSoup
 from wordcloud import STOPWORDS
-# nltk.download('omw-1.4')
 from nltk.stem import WordNetLemmatizer
 
 def preprocess(text):
@@ -54,7 +51,7 @@ def preprocess(text):
     # Tokenize words
     word_tokens = nltk.word_tokenize(text)
     
-    # Keeping the words with length between 4 and 15
+    # Keeping the words with length between 2 and 15
     filtered_tokens = [x for x in word_tokens if len(x)>2 and len(x)<15]
     
     # Filter tokens
@@ -63,10 +60,3 @@ def preprocess(text):
                   and (i not in all_hashtag) and (i not in all_flights) and (not i.isdigit())]
     
     return all_tokens
-
-
-# if __name__ == '__main__':
-
-#     df = pd.concat(map(pd.read_csv, glob.glob('*.csv')))
-#     df['tokenize_text'] = df['text'].apply(lambda text: preprocess(text))
-#     df.to_csv('data/clean_data.csv')
