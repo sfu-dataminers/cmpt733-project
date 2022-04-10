@@ -13,7 +13,7 @@ import logging
 
 from LSTM.lstm_test import predict_sentiment
 from LDA.lda_test import get_topic
-from twitter.nrc_lexicon import fetch_nrc
+from twitter.nrc_lexicon import fetch_nrc, preprocess
 from twitter.responses import fetch_response
 
 def get_api(row):
@@ -67,11 +67,13 @@ def main(topic):
     # Creating udf functions for predicting sentiment, fetching topic and nrc emotion
     predict_sentiment_udf = udf(predict_sentiment,StringType())
     get_topic_udf = udf(get_topic, StringType())
+    preprocess_udf = udf(preprocess, StringType())
     nrc_sentiment_udf = udf(fetch_nrc, StringType())
 
     new_df = new_df.withColumn('Sentiment',predict_sentiment_udf(raw_df.text))
     new_df = new_df.withColumn('Topic',get_topic_udf(raw_df.text))
-    new_df = new_df.withColumn('NRC_Sentiment',nrc_sentiment_udf(raw_df.text))
+    tokenized_text = preprocess_udf(raw_df.text)
+    new_df = new_df.withColumn('NRC_Sentiment',nrc_sentiment_udf(tokenized_text))
 
     # Passing kafka data to get_api function
     stream = new_df.writeStream.format('console').foreach(
