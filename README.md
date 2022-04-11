@@ -10,7 +10,8 @@ The automated responses on Twitter, on which many businesses rely these days, do
 - Twitter Unlabelled Data (Testing): Fetching live tweets mentioning @DataMinersSfu
 
 ### Project Architecture
-![cmpt733_pipeline](https://user-images.githubusercontent.com/20267836/162600436-f2b68bea-0ecd-4398-ac87-d7f6c2097616.png)
+![image](https://user-images.githubusercontent.com/23083816/162656503-2eefcbb6-ac3a-40eb-bd9b-1f30d32ab63c.png)
+
 
 ### Steps to run the project
 
