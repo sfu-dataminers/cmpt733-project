@@ -24,7 +24,7 @@ def check_response(tweet):
     return tweet_response
 
 def example_tweets():
-    tweets = pd.read_csv('./data/example_tweets.csv')
+    tweets = pd.read_csv('./data/catalogue.csv')
     table = Table(title="Example Tweets")
     colour = [ "red", "blue", "green", "yellow", "purple", "white"]
 
@@ -33,7 +33,7 @@ def example_tweets():
         table.add_column(column, justify="left", style = rand_colours)
 
     for ind in tweets.index:
-        table.add_row(tweets['Text'][ind], tweets['Response'][ind])
+        table.add_row(tweets['Tweet'][ind], tweets['Response'][ind])
 
     console = Console()
     console.print(table)
@@ -42,7 +42,7 @@ def main():
     response = True
     while response:
         f = Figlet(font='slant')
-        print(f.renderText('Twitter Response Tool'))
+        print(f.renderText('Auto Twitter Response Tool'))
         print("------------------------------------------")
         print("""
         1. Example Tweets and Responses
