@@ -1,6 +1,12 @@
 # Automated Twitter Response Tool
 In this project, we aim minimise the airlines' tremendous workload by reducing the amount of tweets to respond to, as well as the time it takes for users to get answers to their questions. Furthermore, the sentiment analysis performed on tweets may aid airlines in monitoring the character of their clients and providing better services to them.
 
+#### Team Members
+- Dhruv Patel
+- Himalya Bachwani
+- Kishan Thumar
+- Rahil Balar
+
 ### Objective
 The automated responses on Twitter, on which many businesses rely these days, do not give people a sense of involvement. Our goal is to reassure the user that their adverse airline query or experience is being considered, and to suggest a viable solution.
 
@@ -12,6 +18,7 @@ The automated responses on Twitter, on which many businesses rely these days, do
 ### Project Architecture
 ![image](https://user-images.githubusercontent.com/23083816/162656503-2eefcbb6-ac3a-40eb-bd9b-1f30d32ab63c.png)
 
+_All the initial commits were pushed in version-1 and after successfull validation it was merged with main branch_
 
 ### Steps to run the project
 
