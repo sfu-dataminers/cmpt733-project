@@ -1,7 +1,6 @@
 import pandas as pd
 from nltk import word_tokenize
 from nltk.stem.snowball import SnowballStemmer
-from pre_processing import preprocess
 
 import re
 import pandas as pd
@@ -14,7 +13,7 @@ from nltk.stem import WordNetLemmatizer
 from wordcloud import STOPWORDS
 
 
-stopwords_lstm = pd.read_csv('/home/rahil/Documents/733_proj/cmpt733-project/LSTM/LSTM_details/stopwords_lstm.csv')
+stopwords_lstm = pd.read_csv('./LSTM/LSTM_details/stopwords_lstm.csv')
 
 def preprocess(text):
     
